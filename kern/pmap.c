@@ -171,6 +171,8 @@ mem_init(void)
 	// or page_insert
 	page_init();
 
+	assert(((void *)kern_pgdir) !=  ((void *)pages));
+
 	check_page_free_list(1);
 	check_page_alloc();
 	check_page();
